@@ -141,3 +141,24 @@
   });
 
 })(jQuery);
+
+$(".whatsapp").click(function(){
+  console.log('whatsapp')
+  gtag('event', 'screen_view', { 'screen_name': 'whatsapp' });
+});
+
+
+$(".instagram").click(function(){
+  console.log('instagram')
+  gtag('event', 'screen_view', { 'screen_name': 'instagram' });
+});
+
+$(".linkedin").click(function(){
+  console.log('linkedin')
+  gtag('event', 'screen_view', { 'screen_name': 'linkedin' });
+});
+
+$(".facebook").click(function(){
+  console.log('facebook')
+  gtag('event', 'screen_view', { 'screen_name': 'facebook' });
+});

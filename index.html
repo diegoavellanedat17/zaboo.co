@@ -31,9 +31,33 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145356231-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  //gtag('config', 'UA-145356231-1');
+
+  gtag('config', 'UA-145356231-1', {
+      'page_title' : 'Landing Zaboo',
+      'page_path': '/landing_page'
+    });
+
+  // envio de eventos Categoria y accion del evento 
+
+
+</script>
+
+<!-- FIN Global site tag (gtag.js) - Google Analytics -->
+
+
+
 </head>
 
 <body>
+
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -59,7 +83,7 @@
           <li><a href="#versiones">Versiones</a></li>
           <li><a href="#contact">Contáctanos</a></li>
 
-          <li class="get-started "><a href="https://zabooers.com/">Empezar</a></li>
+          <li class="get-started "><a href="https://zabooers.com/" onclick="gtag('event', 'screen_view', { 'screen_name': 'zabooers' });" >Empezar</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -74,7 +98,7 @@
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
           <h1 class="mt-5">TU AMIGO DONDE LO NECESITAS!</h1>
           <h2>Una simple conversación, miles de soluciones</h2>
-          <a href="https://zabooers.com/" class="btn-get-started scrollto">Empezar</a>
+          <a href="https://zabooers.com/" onclick="gtag('event', 'screen_view', { 'screen_name': 'zabooers' });" class="btn-get-started scrollto">Empezar</a>
         </div>
         <div class="col-lg-6 order-1 order-lg-2  hero-img">
           <img src="assets/img/main-image.svg" class="img-fluid animated" alt="">
@@ -355,7 +379,7 @@
               </div>
 
               <div class="phone">
-                <a href="https://api.whatsapp.com/send?phone=573125268249&text=&source=&data=&app_absent=" class="linkedin"><i class="bx bxl-whatsapp"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=573125268249&text=&source=&data=&app_absent=" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
                 
                 <h4>Whatsapp:</h4>
                 <p>+57 312 526 8249</p>
