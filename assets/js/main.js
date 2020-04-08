@@ -144,7 +144,11 @@
 
 $(".whatsapp").click(function(){
   console.log('whatsapp')
-  gtag('event', 'screen_view', { 'screen_name': 'whatsapp' });
+  gtag('event', 'screen_view', 
+  { 'screen_name': 'whatsapp',
+  'non_interaction': false
+  }
+  );
 });
 
 
