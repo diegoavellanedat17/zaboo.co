@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
- 
+  <link rel="stylesheet" href="/assets/css/intlTelInput.css">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -102,7 +102,7 @@
           <li><a href="#versiones">Versiones</a></li>
           <li><a href="#contact">Contáctanos</a></li>
 
-          <li class="get-started "><a href="https://zabooers.com/" onclick="gtag('event', 'screen_view', { 'screen_name': 'zabooers' });" >Empezar</a></li>
+          <li class="get-started "><a href="https://zabooers.com/" onclick="gtag('event', 'screen_view', { 'screen_name': 'zabooers' });" >Zabooers</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -110,14 +110,33 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
+  <section id="hero"  class="d-flex align-items-center mb-2" style=" height: auto;">
 
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
           <h1 class="mt-5">TU AMIGO DONDE LO NECESITAS!</h1>
           <h2>Una simple conversación, miles de soluciones</h2>
-          <a href="https://zabooers.com/" onclick="gtag('event', 'screen_view', { 'screen_name': 'zabooers' });" class="btn-get-started scrollto">Empezar</a>
+          <a href="" onclick="empezar()" class="btn-get-started scrollto" >Empezar</a>
+              <div class="cuadrito-abajo mb-2 " style="display: none;"> 
+                <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+                <form class="form-inline" action="https://script.google.com/macros/s/AKfycbyTNohsIjUMoBYkJgcjnY8ittISvOqydWmqcipLYooc6qr1nJip/exec"  method="POST" target="dummyframe">
+                  <!-- <form class="form-inline" action="results.html"  method="GET" target="dummyframe"> -->
+                  <div class="form-group col-sm-12">
+                  <input id="phone" name="phone" type="tel" class="form-control mr-2 mb-2 col-sm-12 col-12 col-lg-12 "  required>
+                  <input id="name" name="name" type="text"class="form-control mt-2 mr-2 mb-2 col-sm-12 col-12 col-lg-4 " placeholder="Nombre" required>
+                  <button type="submit" class="kit-virtual col-sm-12 col-12  col-lg-6" onclick="obtener()">Obtener kit virtual</button>
+                </div>
+                <div class="custom-control custom-checkbox " >
+                  <input type="checkbox" class="custom-control-input" id="defaultUnchecked" required name="aceptado" value="on">
+                  <label class="custom-control-label" for="defaultUnchecked">
+                    <h5 class="small ml-3 ">  <span class="font-weight-light ">Terminos y condiciones </span> Kit virtual gratuito </h5> 
+                  </label>
+                </div>
+                  
+                </form>
+                
+              </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2  hero-img">
           <img src="assets/img/main-image.svg" class="img-fluid animated" alt="">
@@ -506,6 +525,7 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="assets/js/intlTelInput.js"></script>
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -517,6 +537,49 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    var input =document.querySelector("#phone");
+  
+    var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+  
+    document.querySelector(".iti__flag-container");
+      var iti= window.intlTelInput(input, {
+       
+         hiddenInput: "full_number",
+  
+         preferredCountries: ['co', 'us'],
+         //separateDialCode: true,
+        utilsScript: "assets/js/utils.js",
+      });
+  
+    var reset = function() {
+    input.classList.remove("error");
+    
+    input.classList.remove("is-invalid");
+    input.classList.remove("is-valid");
+  };
+  
+  // on blur: validate
+  input.addEventListener('blur', function() {
+    reset();
+    if (input.value.trim()) {
+      if (iti.isValidNumber()) {
+        input.classList.add("is-valid");
+      } else {
+        input.classList.add("is-invalid");
+        // var errorCode = iti.getValidationError();
+        // errorMsg.innerHTML = errorMap[errorCode];
+        // errorMsg.classList.remove("hide");
+      }
+    }
+  });
+  
+  
+  // on keyup / change flag: reset
+  input.addEventListener('change', reset);
+  input.addEventListener('keyup', reset);
+  
+  </script>
 
 </body>
 

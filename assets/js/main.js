@@ -142,27 +142,33 @@
 
 })(jQuery);
 
-$(".whatsapp").click(function(){
-  console.log('whatsapp')
-  gtag('event', 'screen_view', 
-  { 'screen_name': 'whatsapp',
-  'non_interaction': false
+function empezar(){
+  console.log('heyhey')
+  $(".cuadrito-abajo").animate({height: "toggle", opacity: "toggle"}, "slow");
+
+}
+
+function obtener(){
+  console.log('obtener')
+  
+  
+  var nameUser = document.getElementById("name").value;
+  var phoneUser = document.getElementById("phone");
+  var checkUser = document.getElementById("defaultUnchecked").value
+  var check = document.getElementById("defaultUnchecked").checked
+  var invalid=phoneUser.classList.contains("is-invalid");
+  
+  if(!nameUser || check!=true || invalid !=false){
+    console.log('VERIFICAR DATOS')
   }
-  );
-});
 
+  else{
+    var queryString="?"+nameUser
+    const path='./welcome.html'+queryString
+    window.open(path, "_blank")
+  }
 
-$(".instagram").click(function(){
-  console.log('instagram')
-  gtag('event', 'screen_view', { 'screen_name': 'instagram' });
-});
+  
+  
 
-$(".linkedin").click(function(){
-  console.log('linkedin')
-  gtag('event', 'screen_view', { 'screen_name': 'linkedin' });
-});
-
-$(".facebook").click(function(){
-  console.log('facebook')
-  gtag('event', 'screen_view', { 'screen_name': 'facebook' });
-});
+}

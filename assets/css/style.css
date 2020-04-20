@@ -344,7 +344,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 70vh;
+  height: 80vh;
   background: linear-gradient(15deg,#713B8F 0%, #3665C1 100%);
   border-bottom: 2px solid #fcebe3;
   margin: 72px 0 -72px 0;
@@ -362,6 +362,12 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   color: #fff;
   margin-bottom: 50px;
   font-size: 24px;
+}
+
+#hero h5 {
+  color: #fff;
+  margin-bottom: 50px;
+  font-size: 12px;
 }
 
 #hero .btn-get-started {
@@ -387,6 +393,26 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 
 #hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+#hero .kit-virtual{
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 10px;
+  transition: 0.5s;
+  margin: 7px;
+  color: #fff;
+  background: none;
+  border:solid 1px white;
+}
+#hero .kit-virtual:hover {
+  border:solid 1px white;
+  
+  background: linear-gradient(15deg,#6B24D6 0%, #2AF6FF 100%);
 }
 
 
